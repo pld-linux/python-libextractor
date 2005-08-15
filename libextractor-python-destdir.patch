@@ -1,0 +1,11 @@
+--- libextractor-python-0.5.1/Makefile.am.orig	2005-07-04 18:38:15.000000000 +0200
++++ libextractor-python-0.5.1/Makefile.am	2005-08-15 12:38:09.484438720 +0200
+@@ -12,7 +12,7 @@
+ 	python libextractor_python_setup.py "$(libdir)" build
+ 
+ install-exec-local:
+-	python libextractor_python_setup.py $(libdir) install --prefix=$(PYTHON_PREFIX)
++	python libextractor_python_setup.py $(libdir) install --prefix=$(DESTDIR)$(PYTHON_PREFIX)
+ 
+ 
+ ACLOCAL_AMFLAGS = -I m4
