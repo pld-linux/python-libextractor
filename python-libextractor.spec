@@ -15,6 +15,7 @@ BuildRequires:	libextractor-devel >= %{version}
 BuildRequires:	python-devel >= 1:2.3
 Requires:	libextractor >= %{version}
 %pyrequires_eq	python-libs
+Obsoletes:	python-extractor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
