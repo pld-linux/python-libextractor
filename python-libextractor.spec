@@ -1,12 +1,12 @@
 Summary:	Python support for libextractor
 Summary(pl):	Modu³ jêzyka Python dla biblioteki libextractor
 Name:		python-libextractor
-Version:	0.5.1
+Version:	0.5.4
 Release:	1
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://gnunet.org/libextractor/download/libextractor-python-%{version}.tar.gz
-# Source0-md5:	5a703ad2e09e13c64e29f284bdfe4ac0
+# Source0-md5:	fbe72b00b8780b528892274b96c9d40f
 Patch0:		libextractor-python-destdir.patch
 URL:		http://gnunet.org/libextractor/
 BuildRequires:	autoconf >= 2.57
@@ -32,7 +32,8 @@ Modu³ jêzyka Python dla biblioteki libextractor.
 %{__aclocal} -I m4
 %{__autoconf}
 %{__automake}
-%configure
+%configure \
+	--with-extractor=/usr
 
 %{__make}
 
