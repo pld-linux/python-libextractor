@@ -1,5 +1,5 @@
 Summary:	Python support for libextractor
-Summary(pl):	Modu³ jêzyka Python dla biblioteki libextractor
+Summary(pl.UTF-8):   ModuÅ‚ jÄ™zyka Python dla biblioteki libextractor
 Name:		python-libextractor
 Version:	0.5.4
 Release:	1
@@ -21,8 +21,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Python support for libextractor.
 
-%description -l pl
-Modu³ jêzyka Python dla biblioteki libextractor.
+%description -l pl.UTF-8
+ModuÅ‚ jÄ™zyka Python dla biblioteki libextractor.
 
 %prep
 %setup -q -n libextractor-python-%{version}
