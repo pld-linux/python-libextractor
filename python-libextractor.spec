@@ -2,7 +2,7 @@ Summary:	Python support for libextractor
 Summary(pl.UTF-8):	Moduł języka Python dla biblioteki libextractor
 Name:		python-libextractor
 Version:	0.5.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		Libraries/Python
 Source0:	http://gnunet.org/libextractor/download/libextractor-python-%{version}.tar.gz
