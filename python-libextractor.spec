@@ -8,6 +8,7 @@ Group:		Libraries/Python
 Source0:	http://gnunet.org/libextractor/download/libextractor-python-%{version}.tar.gz
 # Source0-md5:	fbe72b00b8780b528892274b96c9d40f
 Patch0:		libextractor-python-destdir.patch
+Patch1:		ac_python_devel.patch
 URL:		http://gnunet.org/libextractor/
 BuildRequires:	autoconf >= 2.57
 BuildRequires:	automake
@@ -27,6 +28,7 @@ Moduł języka Python dla biblioteki libextractor.
 %prep
 %setup -q -n libextractor-python-%{version}
 %patch0 -p1
+%patch1 -p1
 
 %build
 %{__aclocal} -I m4
