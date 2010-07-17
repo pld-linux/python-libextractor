@@ -1,3 +1,10 @@
+# TODO
+# - fix some autoböö:
+#checking for EXTRACTOR_loadDefaultLibraries in -lextractor... ./configure[4411]: ac_fn_c_try_link: not found
+#no
+#configure: error: libextractor-python requires libextractor
+#error: Bad exit status from /home/users/glen/tmp/rpm-tmp.7334 (%build)
+
 Summary:	Python support for libextractor
 Summary(pl.UTF-8):	Moduł języka Python dla biblioteki libextractor
 Name:		python-libextractor
