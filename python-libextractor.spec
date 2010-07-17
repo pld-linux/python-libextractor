@@ -1,5 +1,5 @@
 # TODO
-# - fix some autoböö:
+# - fix some autofoo:
 #checking for EXTRACTOR_loadDefaultLibraries in -lextractor... ./configure[4411]: ac_fn_c_try_link: not found
 #no
 #configure: error: libextractor-python requires libextractor
