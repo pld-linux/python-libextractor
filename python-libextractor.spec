@@ -1,61 +1,50 @@
-# TODO
-# - fix some autofoo:
-#checking for EXTRACTOR_loadDefaultLibraries in -lextractor... ./configure[4411]: ac_fn_c_try_link: not found
-#no
-#configure: error: libextractor-python requires libextractor
-#error: Bad exit status from /home/users/glen/tmp/rpm-tmp.7334 (%build)
-
-Summary:	Python support for libextractor
-Summary(pl.UTF-8):	Moduł języka Python dla biblioteki libextractor
+Summary:	Python bindings for GNU libextractor
+Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GNU libextractor
 Name:		python-libextractor
-Version:	0.5.4
-Release:	4
-License:	GPL
+Version:	0.6
+Release:	1
+License:	GPL v2+
 Group:		Libraries/Python
-Source0:	http://gnunet.org/libextractor/download/libextractor-python-%{version}.tar.gz
-# Source0-md5:	fbe72b00b8780b528892274b96c9d40f
-Patch0:		libextractor-python-destdir.patch
-Patch1:		ac_python_devel.patch
+Source0:	http://ftp.gnu.org/gnu/libextractor/libextractor-python-%{version}.tar.gz
+# Source0-md5:	adea21c10163d262e02154b21b4f74a2
 URL:		http://gnunet.org/libextractor/
-BuildRequires:	autoconf >= 2.57
-BuildRequires:	automake
-BuildRequires:	libextractor-devel >= %{version}
+BuildRequires:	libextractor-devel >= 0.6
 BuildRequires:	python-devel >= 1:2.3
-Requires:	libextractor >= %{version}
+BuildRequires:	rpm-pythonprov
+BuildRequires:	rpmbuild(macros) >= 1.219
+Requires:	libextractor >= 0.6
 %pyrequires_eq	python-libs
 Obsoletes:	python-extractor
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Python support for libextractor.
+Python bindings for GNU libextractor.
 
 %description -l pl.UTF-8
-Moduł języka Python dla biblioteki libextractor.
+Wiązania Pythona do biblioteki GNU libextractor.
 
 %prep
-%setup -q -n libextractor-python-%{version}
-%patch0 -p1
-%patch1 -p1
+%setup -q -n Extractor-%{version}
 
 %build
-%{__aclocal} -I m4
-%{__autoconf}
-%{__automake}
-%configure \
-	--with-extractor=/usr
-
-%{__make}
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%{__python} setup.py install \
+	--skip-build \
+	--root=$RPM_BUILD_ROOT \
+	--optimize=2
+
+%py_postclean
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS ChangeLog README
-%attr(755,root,root) %{py_sitedir}/extractor.so
+%doc README
+%attr(755,root,root) %{_bindir}/extract.py
+%{py_sitescriptdir}/extractor.py[co]
+%{py_sitescriptdir}/Extractor-0.6-py*.egg-info
