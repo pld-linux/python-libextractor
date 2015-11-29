@@ -11,7 +11,7 @@ URL:		http://gnunet.org/libextractor/
 BuildRequires:	libextractor-devel >= 0.6
 BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	rpm-pythonprov
-BuildRequires:	rpmbuild(macros) >= 1.219
+BuildRequires:	rpmbuild(macros) >= 1.710
 Requires:	libextractor >= 0.6
 %pyrequires_eq	python-libs
 Obsoletes:	python-extractor
