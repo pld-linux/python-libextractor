@@ -2,7 +2,7 @@ Summary:	Python bindings for GNU libextractor
 Summary(pl.UTF-8):	Wiązania Pythona do biblioteki GNU libextractor
 Name:		python-libextractor
 Version:	0.6
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Libraries/Python
 Source0:	http://ftp.gnu.org/gnu/libextractor/libextractor-python-%{version}.tar.gz
